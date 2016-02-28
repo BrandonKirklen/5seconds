@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  fiveseconds
+//  OneSignalKit Demo
 //
-//  Created by Vijay Sridhar on 2/27/16.
-//  Copyright © 2016 behv. All rights reserved.
+//  Created by Dipu Rajak on 2/12/16.
+//  Copyright © 2016 Dipu Rajak. All rights reserved.
 //
 
 import UIKit
@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        uploadImage(UIImage(named: "testpic.png")!, success: { success in
-            assert(success == true)
-        })
         return true
     }
 
