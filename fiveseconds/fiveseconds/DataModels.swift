@@ -9,7 +9,6 @@
 import Foundation
 import CoreLocation
 import UIKit
-import SwiftyJSON
 
 enum Request {
     case Location
@@ -24,7 +23,7 @@ enum Response {
     case Choice(ChoiceSide)
     case Arrival(NSDate)
     case Status(Bool)
-    case Visual(UIImage)
+    case Visual(String)
 }
 
 enum ChoiceSide {
