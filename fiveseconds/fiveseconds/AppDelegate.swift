@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let oneSignal = OneSignal(launchOptions: launchOptions, appId: "f3afdc44-708c-480d-916a-be561ef7871b", handleNotification: nil)
         
-        OneSignal.defaultClient().enableInAppAlertNotification(true)
+        OneSignal.defaultClient()?.enableInAppAlertNotification(true)
         
         // uploadFile(NSBundle.mainBundle().URLForResource("testpic", withExtension: "png")!)
         return true

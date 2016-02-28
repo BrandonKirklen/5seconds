@@ -22,8 +22,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var visuals = ["Photo", "Video"]
 
     override func viewDidLoad() {
-        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 60, 0)
+        collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 60, 0)
         super.viewDidLoad()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -79,8 +83,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : RequestCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! RequestCollectionViewCell
         
-        var text: String
-        
         switch (groups[indexPath.section]) {
         case .Location:
             cell.setUpCell(.Location, name: locations[indexPath.row], index: indexPath)
@@ -102,11 +104,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        let aspect: CGFloat = UIScreen.mainScreen().bounds.size.width / 3.0
-//        return CGSizeMake(shotWidth * aspect, shotHeight * aspect + 50)
-//    }
-//    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         switch (groups[indexPath.row]) {
         case .Location:
