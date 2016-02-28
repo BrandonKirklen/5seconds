@@ -17,13 +17,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var groups: [Request] = [.Location, .Choice("",""), .Status(""), .Visual];
     
     var locations = ["Location", "ETA"]
-    var choices = [("Custom", ""), ("Pizza", "Burgers"), ("Eat out", "Eat in")]
+    var choices = [("Custom", ""), ("Pizza", "Burgers"), ("Eat out", "in")]
     var statuses = ["Ready", "Late", "Safe", "There", "Hungry", "Busy", "Awake"]
     var visuals = ["Photo", "Video"]
 
     override func viewDidLoad() {
-        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 60, 0)
+        collectionView.contentInset = UIEdgeInsetsMake(-20, 0, 60, 0)
         super.viewDidLoad()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -79,44 +83,40 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : RequestCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! RequestCollectionViewCell
         
-        var text: String
-        
         switch (groups[indexPath.section]) {
         case .Location:
-            cell.setUpCell(.Location, name: locations[indexPath.row], index: indexPath)
+            cell.setUpCell(.Location, name: (locations[indexPath.row], ""), index: indexPath)
             
         case .Choice("", ""):
-            cell.setUpCell(.Choice("", ""), name: choices[indexPath.row].0, index: indexPath)
+            cell.setUpCell(.Choice("", ""), name: choices[indexPath.row], index: indexPath)
             
         case .Status(""):
-            cell.setUpCell(.Status(""), name: statuses[indexPath.row], index: indexPath)
+            cell.setUpCell(.Status(""), name: (statuses[indexPath.row], ""), index: indexPath)
             
         case .Visual:
-            cell.setUpCell(.Visual, name: visuals[indexPath.row], index: indexPath)
+            cell.setUpCell(.Visual, name: (visuals[indexPath.row], ""), index: indexPath)
             
         default:
-            cell.setUpCell(.Location, name: locations[indexPath.row], index: indexPath)
+            cell.setUpCell(.Location, name: (locations[indexPath.row], ""), index: indexPath)
         }
         
         return cell
     }
 
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        let aspect: CGFloat = UIScreen.mainScreen().bounds.size.width / 3.0
-//        return CGSizeMake(shotWidth * aspect, shotHeight * aspect + 50)
-//    }
-//    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        switch (groups[indexPath.row]) {
+        switch (groups[indexPath.section]) {
         case .Location:
-            break
-            
-        case .Arrival(CLLocation()):
+            let contactView : ContactTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("ContactTableView") as! ContactTableViewController
+            self.presentViewController(contactView, animated: true, completion: { () -> Void in
+                
+            })
             break
             
         case .Choice("", ""):
+            break
             
+        case .Status(""):
             break
             
         case .Visual:

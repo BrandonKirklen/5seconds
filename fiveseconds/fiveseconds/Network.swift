@@ -36,7 +36,8 @@ func uploadImage(image: UIImage, success: Bool -> ()) {
     }
 }
 
-func uploadFile(fileUrl: NSURL) {
+func uploadFile(fileUrl: NSURL) -> String{
+    var returnURL = ""
     let boundary: String = "---------------------\(arc4random())\(arc4random())"
     let clientID = "a2937890588dc17"
     //        let clientSecret = apiKeys!["ClientSecret"]!
@@ -72,6 +73,7 @@ func uploadFile(fileUrl: NSURL) {
                     let imgLink = responseDict.valueForKey("data")!.valueForKey("link") as! String
                     print("Image Uploaded:", terminator: "")
                     print(imgLink);
+                    returnURL += imgLink
                     
                 } else {
                     NSLog("An error occurred: %@", responseDict);
@@ -81,6 +83,6 @@ func uploadFile(fileUrl: NSURL) {
             }
         }
     })
-    
+    return returnURL
     
 }
