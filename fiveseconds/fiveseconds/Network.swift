@@ -38,8 +38,7 @@ func uploadImage(image: UIImage, success: Bool -> ()) {
 
 func uploadFile(fileUrl: NSURL) {
     let boundary: String = "---------------------\(arc4random())\(arc4random())"
-    var apiKeys: Dictionary<String, String>?
-    let clientID = apiKeys!["ClientID"]!
+    let clientID = "a2937890588dc17"
     //        let clientSecret = apiKeys!["ClientSecret"]!
     let imageData: NSData = try! NSData(contentsOfURL: fileUrl, options: [])
     

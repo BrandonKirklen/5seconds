@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        uploadImage(UIImage(named: "testpic.png")!, success: { success in
-            assert(success == true)
-        })
+//        uploadImage(UIImage(named: "testpic.png")!, success: { success in
+//            assert(success == true)
+//        })
+        uploadFile(NSBundle.mainBundle().URLForResource("testpic", withExtension: "png")!)
         return true
     }
 
