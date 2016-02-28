@@ -17,7 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var groups: [Request] = [.Location, .Choice("",""), .Status(""), .Visual];
     
     var locations = ["Location", "ETA"]
-    var choices = [("Custom", ""), ("Pizza", "Burgers"), ("Eat out", "Eat in")]
+    var choices = [("Custom", ""), ("Pizza", "Burgers"), ("Eat out", "in")]
     var statuses = ["Ready", "Late", "Safe", "There", "Hungry", "Busy", "Awake"]
     var visuals = ["Photo", "Video"]
 
@@ -85,19 +85,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         switch (groups[indexPath.section]) {
         case .Location:
-            cell.setUpCell(.Location, name: locations[indexPath.row], index: indexPath)
+            cell.setUpCell(.Location, name: (locations[indexPath.row], ""), index: indexPath)
             
         case .Choice("", ""):
-            cell.setUpCell(.Choice("", ""), name: choices[indexPath.row].0, index: indexPath)
+            cell.setUpCell(.Choice("", ""), name: choices[indexPath.row], index: indexPath)
             
         case .Status(""):
-            cell.setUpCell(.Status(""), name: statuses[indexPath.row], index: indexPath)
+            cell.setUpCell(.Status(""), name: (statuses[indexPath.row], ""), index: indexPath)
             
         case .Visual:
-            cell.setUpCell(.Visual, name: visuals[indexPath.row], index: indexPath)
+            cell.setUpCell(.Visual, name: (visuals[indexPath.row], ""), index: indexPath)
             
         default:
-            cell.setUpCell(.Location, name: locations[indexPath.row], index: indexPath)
+            cell.setUpCell(.Location, name: (locations[indexPath.row], ""), index: indexPath)
         }
         
         return cell
@@ -105,15 +105,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        switch (groups[indexPath.row]) {
+        switch (groups[indexPath.section]) {
         case .Location:
             break
             
-        case .Arrival(CLLocation()):
+        case .Choice("", ""):
             break
             
-        case .Choice("", ""):
-            
+        case .Status(""):
             break
             
         case .Visual:

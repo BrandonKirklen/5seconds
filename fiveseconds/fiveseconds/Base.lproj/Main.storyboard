@@ -57,7 +57,7 @@
                                                         <constraint firstAttribute="height" constant="75" id="N6T-T2-p0U"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-GO-piA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-GO-piA">
                                                     <rect key="frame" x="18" y="89" width="62.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,7 +86,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWk-Dg-sdn">
                                             <rect key="frame" x="8" y="26" width="56" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ari-6w-Gwn" userLabel="Hairline">
@@ -123,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="five seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfT-oQ-cl6">
-                                        <rect key="frame" x="249" y="41" width="101" height="20.5"/>
+                                        <rect key="frame" x="249" y="34.5" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="BfT-oQ-cl6" firstAttribute="centerX" secondItem="Tgh-eE-vRG" secondAttribute="centerX" id="Af5-2d-R4k"/>
-                                    <constraint firstAttribute="bottom" secondItem="BfT-oQ-cl6" secondAttribute="bottom" constant="8" id="T5N-5U-W1A"/>
+                                    <constraint firstAttribute="bottom" secondItem="BfT-oQ-cl6" secondAttribute="bottom" constant="15" id="T5N-5U-W1A"/>
                                     <constraint firstAttribute="height" constant="70" id="WGW-R4-565"/>
                                     <constraint firstAttribute="bottom" secondItem="BfT-oQ-cl6" secondAttribute="bottom" constant="8.5" id="WVU-p7-c6I"/>
                                 </constraints>
