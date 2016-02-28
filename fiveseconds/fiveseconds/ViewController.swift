@@ -107,6 +107,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         switch (groups[indexPath.section]) {
         case .Location:
+            let contactView : ContactTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("ContactTableView") as! ContactTableViewController
+            self.presentViewController(contactView, animated: true, completion: { () -> Void in
+                
+            })
             break
             
         case .Choice("", ""):

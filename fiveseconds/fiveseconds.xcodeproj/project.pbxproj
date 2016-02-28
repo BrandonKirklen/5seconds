@@ -27,6 +27,7 @@
 		B16D4E3F1C827D9200C6C472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E3E1C827D9200C6C472 /* Assets.xcassets */; };
 		B16D4E421C827D9200C6C472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E401C827D9200C6C472 /* LaunchScreen.storyboard */; };
 		B1AA0BBB1C8357A6000F0DA9 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA0BBA1C8357A6000F0DA9 /* PathDynamicModal.swift */; };
+		B1AA0BBD1C835A8A000F0DA9 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA0BBC1C835A8A000F0DA9 /* ContactTableViewController.swift */; };
 		B1DF30181C8332F600311C86 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DF30171C8332F600311C86 /* HeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		B16D4E411C827D9200C6C472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B16D4E431C827D9200C6C472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1AA0BBA1C8357A6000F0DA9 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
+		B1AA0BBC1C835A8A000F0DA9 /* ContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		B1DF30171C8332F600311C86 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				B16D4E371C827D9200C6C472 /* AppDelegate.swift */,
 				B16D4E391C827D9200C6C472 /* ViewController.swift */,
 				B16D4E3B1C827D9200C6C472 /* Main.storyboard */,
+				B1AA0BBC1C835A8A000F0DA9 /* ContactTableViewController.swift */,
 				B1DF30171C8332F600311C86 /* HeaderCollectionReusableView.swift */,
 				B15B79271C82CE50006C5ED0 /* RequestCollectionViewCell.swift */,
 				B16D4E3E1C827D9200C6C472 /* Assets.xcassets */,
@@ -283,6 +286,7 @@
 				B15B79281C82CE50006C5ED0 /* RequestCollectionViewCell.swift in Sources */,
 				B1AA0BBB1C8357A6000F0DA9 /* PathDynamicModal.swift in Sources */,
 				B16D4E381C827D9200C6C472 /* AppDelegate.swift in Sources */,
+				B1AA0BBD1C835A8A000F0DA9 /* ContactTableViewController.swift in Sources */,
 				477B70341C82CDD1007D0945 /* JSONDeserializable.swift in Sources */,
 				477B70321C82C844007D0945 /* JSONSerializable.swift in Sources */,
 			);
