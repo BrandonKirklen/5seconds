@@ -14,53 +14,89 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tabBarView: UIVisualEffectView!
         
-    var groups: [Request] = [.Location, .Choice("",""), .Status(""), .Arrival(CLLocation()), .Visual];
+    var groups: [Request] = [.Location, .Choice("",""), .Status(""), .Visual];
     
+    var locations = ["Location", "ETA"]
+    var choices = [("Custom", ""), ("Pizza", "Burgers"), ("Eat out", "Eat in")]
+    var statuses = ["Ready", "Late", "Safe", "There", "Hungry", "Busy", "Awake"]
+    var visuals = ["Photo", "Video"]
+
     override func viewDidLoad() {
-        collectionView.contentInset = UIEdgeInsetsMake(20, 0, 45, 0)
-//        collectionView.number
-//        tableView.registerNib(UINib.init(nibName: "GroupTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "groupCell")
+        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 60, 0)
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        switch (groups[section]) {
+        case .Location:
+            return locations.count
+        
+        case .Choice("", ""):
+            return choices.count
+            
+        case .Status(""):
+            return statuses.count
+            
+        case .Visual:
+            return visuals.count
+
+        default:
+            return 0
+        }
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int   {
-        return 3
+        return groups.count
     }
     
-//    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-//        
-//    }
-//    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        var headerView: HeaderCollectionReusableView = HeaderCollectionReusableView()
+        
+        if (kind == UICollectionElementKindSectionHeader) {
+            headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as! HeaderCollectionReusableView
+            
+            switch (groups[indexPath.section]) {
+            case .Location:
+                headerView.headerLabel.text = "Location"
+                
+            case .Choice("", ""):
+                headerView.headerLabel.text = "Choices"
+                
+            case .Status(""):
+                headerView.headerLabel.text = "Status"
+                
+            case .Visual:
+                headerView.headerLabel.text = "Snapshots"
+                
+            default:
+                headerView.headerLabel.text = ""
+            }
+        }
+        
+        return headerView
+    }
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell : RequestCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! RequestCollectionViewCell
         
         var text: String
         
-        switch (groups[indexPath.row]) {
+        switch (groups[indexPath.section]) {
         case .Location:
-            text = "Location"
+            cell.setUpCell(.Location, name: locations[indexPath.row], index: indexPath)
             
         case .Choice("", ""):
-            text = "Question"
+            cell.setUpCell(.Choice("", ""), name: choices[indexPath.row].0, index: indexPath)
             
-        case .Arrival(CLLocation()):
-            text = "ETA"
+        case .Status(""):
+            cell.setUpCell(.Status(""), name: statuses[indexPath.row], index: indexPath)
             
         case .Visual:
-            text = "Photo"
+            cell.setUpCell(.Visual, name: visuals[indexPath.row], index: indexPath)
             
         default:
-            text = "Unknown"
-            break
+            cell.setUpCell(.Location, name: locations[indexPath.row], index: indexPath)
         }
-        
-        cell.imageView.image = UIImage(named: "camera")
-        cell.textLabel.text = text
         
         return cell
     }

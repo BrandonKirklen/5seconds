@@ -12,4 +12,9 @@ class RequestCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
+    func setUpCell(requestType: Request, name: String, index: NSIndexPath) {
+        imageView.image = UIImage(named: name)
+        textLabel.text = name
+    }
 }
