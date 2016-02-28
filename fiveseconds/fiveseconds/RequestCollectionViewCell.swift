@@ -15,6 +15,10 @@ class RequestCollectionViewCell: UICollectionViewCell {
     
     func setUpCell(requestType: Request, name: String, index: NSIndexPath) {
         imageView.image = UIImage(named: name)
-        textLabel.text = name
+        setLabel(name)
+    }
+    
+    func setLabel(text: String) {
+        textLabel.text = text.lowercaseString
     }
 }
