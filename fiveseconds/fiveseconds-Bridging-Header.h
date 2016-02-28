@@ -9,6 +9,6 @@
 #ifndef fiveseconds_Bridging_Header_h
 #define fiveseconds_Bridging_Header_h
 
-#import <OneSignal/OneSignal.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #endif /* fiveseconds_Bridging_Header_h */

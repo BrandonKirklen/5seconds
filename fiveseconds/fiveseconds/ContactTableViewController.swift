@@ -20,44 +20,45 @@ class ContactTableViewController: UIViewController, UITableViewDelegate, UITable
         
         tableView.allowsMultipleSelection = true;
 
-        let status = CNContactStore.authorizationStatusForEntityType(.Contacts)
-        if status == .Denied || status == .Restricted {
-            // user previously denied, so tell them to fix that in settings
-            return
-        }
-        
-        // open it
-        
-        let store = CNContactStore()
-        store.requestAccessForEntityType(.Contacts) { granted, error in
-            guard granted else {
-                dispatch_async(dispatch_get_main_queue()) {
-                    // user didn't grant authorization, so tell them to fix that in settings
-                    print(error)
-                }
-                return
-            }
-            
-            // get the contacts
-            
-            let request = CNContactFetchRequest(keysToFetch: [CNContactIdentifierKey, CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName), CNContactPhoneNumbersKey])
-            do {
-                try store.enumerateContactsWithFetchRequest(request) { contact, stop in
-                    self.contacts.append(contact)
-                }
-                self.tableView.reloadData()
-            } catch {
-                print(error)
-            }
-            
-            // do something with the contacts array (e.g. print the names)
-            
-            let formatter = CNContactFormatter()
-            formatter.style = .FullName
-            for contact in self.contacts {
-                print(formatter.stringFromContact(contact))
-            }
-        }
+//        let status = CNContactStore.authorizationStatusForEntityType(.Contacts)
+//        if status == .Denied || status == .Restricted {
+//            // user previously denied, so tell them to fix that in settings
+//            return
+//        }
+//        
+//        // open it
+//        
+//        let store = CNContactStore()
+//        store.requestAccessForEntityType(.Contacts) { granted, error in
+//            guard granted else {
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    // user didn't grant authorization, so tell them to fix that in settings
+//                    print(error)
+//                }
+//                return
+//            }
+//            
+//            // get the contacts
+//            
+//            let request = CNContactFetchRequest(keysToFetch: [CNContactIdentifierKey, CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName), CNContactPhoneNumbersKey])
+//            do {
+//                try store.enumerateContactsWithFetchRequest(request) { contact, stop in
+//                    self.contacts.append(contact)
+//                }
+//                print(self.contacts.count)
+//                self.tableView.reloadData()
+//            } catch {
+//                print(error)
+//            }
+//            
+//            // do something with the contacts array (e.g. print the names)
+//            
+//            let formatter = CNContactFormatter()
+//            formatter.style = .FullName
+////            for contact in self.contacts {
+////                print(formatter.stringFromContact(contact))
+////            }
+//        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -73,7 +74,16 @@ class ContactTableViewController: UIViewController, UITableViewDelegate, UITable
         var phoneNumberArray = [String]()
 
         for (_, indexPath) in self.tableView.indexPathsForSelectedRows!.enumerate() {
-            phoneNumberArray.append((contacts[indexPath.row].phoneNumbers[0].value as! CNPhoneNumber).valueForKey("digits") as! String)
+            if (contacts[indexPath.row].phoneNumbers.count > 0) {
+                var phoneNumber = (contacts[indexPath.row].phoneNumbers[0].value as! CNPhoneNumber).valueForKey("digits") as! String
+                
+                if (phoneNumber.characters.count == 12) {
+                    phoneNumber.removeAtIndex(phoneNumber.startIndex)
+                    phoneNumber.removeAtIndex(phoneNumber.startIndex)
+                }
+                print(phoneNumber)
+                phoneNumberArray.append(phoneNumber)
+            }
         }
         
         print(phoneNumberArray)
@@ -86,17 +96,25 @@ class ContactTableViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        
+        print(self.contacts.count)
         // Configure the cell...
-        cell.textLabel!.text = "\(contacts[indexPath.row].givenName)"
-        var phoneNumber = (contacts[indexPath.row].phoneNumbers[0].value as! CNPhoneNumber).valueForKey("digits") as! String
-        if (!phoneNumber.containsString("-")) {
-            phoneNumber.insert("-", atIndex: phoneNumber.startIndex.advancedBy(3))
-            phoneNumber.insert("-", atIndex: phoneNumber.startIndex.advancedBy(7))
+        cell.textLabel!.text = "\(contacts[indexPath.row].givenName) \(contacts[indexPath.row].familyName)"
+        if (contacts[indexPath.row].phoneNumbers.count > 0) {
+            var phoneNumber = (contacts[indexPath.row].phoneNumbers[0].value as! CNPhoneNumber).valueForKey("digits") as! String
+            if (phoneNumber.characters.count == 12) {
+                phoneNumber.removeAtIndex(phoneNumber.startIndex)
+                phoneNumber.removeAtIndex(phoneNumber.startIndex)
+            }
+            
+            if (!phoneNumber.containsString("-") && phoneNumber.characters.count == 10) {
+                phoneNumber.insert("-", atIndex: phoneNumber.startIndex.advancedBy(3))
+                phoneNumber.insert("-", atIndex: phoneNumber.startIndex.advancedBy(7))
+            }
+            cell.detailTextLabel!.text = "\(phoneNumber)"
         }
-        cell.detailTextLabel!.text = "\(phoneNumber)"
-//        cell.textLabel!.text = "row: \(contacts[indexPath.row].givenName)"
         
+        cell.accessoryType = UITableViewCellAccessoryType.None
+
         if cell.selected
         {
             cell.selected = false

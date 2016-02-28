@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Contacts
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -105,15 +106,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let contactView : ContactTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("ContactTableView") as! ContactTableViewController
+        
         switch (groups[indexPath.section]) {
         case .Location:
-            let contactView : ContactTableViewController! = storyboard?.instantiateViewControllerWithIdentifier("ContactTableView") as! ContactTableViewController
-            self.presentViewController(contactView, animated: true, completion: { () -> Void in
-                
-            })
             break
             
         case .Choice("", ""):
+//            SVProgressHUD.show
+//            SVProgressHUD.sho
             break
             
         case .Status(""):
@@ -125,6 +127,53 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         default:
             break
+        }
+        
+        let status = CNContactStore.authorizationStatusForEntityType(.Contacts)
+        if status == .Denied || status == .Restricted {
+            // user previously denied, so tell them to fix that in settings
+            return
+        }
+        
+        // open it
+        
+        let store = CNContactStore()
+        store.requestAccessForEntityType(.Contacts) { granted, error in
+            guard granted else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    // user didn't grant authorization, so tell them to fix that in settings
+                    print(error)
+                }
+                return
+            }
+            
+            let request = CNContactFetchRequest(keysToFetch: [CNContactIdentifierKey, CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName), CNContactPhoneNumbersKey])
+            do {
+                try store.enumerateContactsWithFetchRequest(request) { contact, stop in
+                    contactView.contacts.append(contact)
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    let view = CustomChoiceView.instantiateFromNib()
+                    let window = UIApplication.sharedApplication().delegate?.window!
+                    let modal = PathDynamicModal()
+                    modal.showMagnitude = 100.0
+                    modal.closeMagnitude = 130.0
+                    view.saveButtonHandler = { choice1, choice2 in
+                        print(choice1)
+                        print(choice2)
+                        modal.closeWithLeansRandom()
+                    }
+                    
+                    modal.show(modalView: view, inView: window!)
+                })
+//                self.presentViewController(contactView, animated: true, completion: { () -> Void in
+                
+//                })
+            } catch {
+                print(error)
+            }
+            
         }
     }
     

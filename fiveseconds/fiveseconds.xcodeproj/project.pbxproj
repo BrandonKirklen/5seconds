@@ -20,12 +20,15 @@
 		477B70391C82EC8B007D0945 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 477B70371C82EC8B007D0945 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477B70411C83050D007D0945 /* fivesecondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477B70401C83050D007D0945 /* fivesecondsTests.swift */; };
 		477B70481C830672007D0945 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B702D1C82C75A007D0945 /* SwiftyJSON.framework */; };
+		8AE98F59F9AB3033C0532BA2 /* Pods_fiveseconds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F8F62036D051146800B06C /* Pods_fiveseconds.framework */; };
 		B15B79281C82CE50006C5ED0 /* RequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B79271C82CE50006C5ED0 /* RequestCollectionViewCell.swift */; };
 		B16D4E381C827D9200C6C472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4E371C827D9200C6C472 /* AppDelegate.swift */; };
 		B16D4E3A1C827D9200C6C472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4E391C827D9200C6C472 /* ViewController.swift */; };
 		B16D4E3D1C827D9200C6C472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E3B1C827D9200C6C472 /* Main.storyboard */; };
 		B16D4E3F1C827D9200C6C472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E3E1C827D9200C6C472 /* Assets.xcassets */; };
 		B16D4E421C827D9200C6C472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E401C827D9200C6C472 /* LaunchScreen.storyboard */; };
+		B16EEBFA1C8370F0004454B6 /* CustomChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16EEBF91C8370F0004454B6 /* CustomChoiceView.swift */; };
+		B16EEBFC1C837107004454B6 /* CustomChoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16EEBFB1C837107004454B6 /* CustomChoiceView.xib */; };
 		B1AA0BBB1C8357A6000F0DA9 /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA0BBA1C8357A6000F0DA9 /* PathDynamicModal.swift */; };
 		B1AA0BBD1C835A8A000F0DA9 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AA0BBC1C835A8A000F0DA9 /* ContactTableViewController.swift */; };
 		B1DF30181C8332F600311C86 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DF30171C8332F600311C86 /* HeaderCollectionReusableView.swift */; };
@@ -69,7 +72,9 @@
 		477B703E1C83050D007D0945 /* fivesecondsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fivesecondsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		477B70401C83050D007D0945 /* fivesecondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fivesecondsTests.swift; sourceTree = "<group>"; };
 		477B70421C83050D007D0945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F8F62036D051146800B06C /* Pods_fiveseconds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fiveseconds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844FAB0C1C834065004B7C28 /* fiveseconds-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fiveseconds-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		970A4A38E7EB33EF606A9F6D /* Pods-fiveseconds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fiveseconds.release.xcconfig"; path = "Pods/Target Support Files/Pods-fiveseconds/Pods-fiveseconds.release.xcconfig"; sourceTree = "<group>"; };
 		B15B79271C82CE50006C5ED0 /* RequestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCollectionViewCell.swift; sourceTree = "<group>"; };
 		B16D4E341C827D9200C6C472 /* fiveseconds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fiveseconds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16D4E371C827D9200C6C472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,9 +83,12 @@
 		B16D4E3E1C827D9200C6C472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B16D4E411C827D9200C6C472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B16D4E431C827D9200C6C472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B16EEBF91C8370F0004454B6 /* CustomChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChoiceView.swift; sourceTree = "<group>"; };
+		B16EEBFB1C837107004454B6 /* CustomChoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomChoiceView.xib; sourceTree = "<group>"; };
 		B1AA0BBA1C8357A6000F0DA9 /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
 		B1AA0BBC1C835A8A000F0DA9 /* ContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		B1DF30171C8332F600311C86 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		EC90932CB41F57A80ADD39D1 /* Pods-fiveseconds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fiveseconds.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fiveseconds/Pods-fiveseconds.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 				477B702E1C82C75A007D0945 /* SwiftyJSON.framework in Frameworks */,
 				477B70381C82EC8B007D0945 /* Alamofire.framework in Frameworks */,
 				47521AE61C833EE400A49E07 /* OneSignalKit.framework in Frameworks */,
+				8AE98F59F9AB3033C0532BA2 /* Pods_fiveseconds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +123,14 @@
 			path = fivesecondsTests;
 			sourceTree = "<group>";
 		};
+		ADD5D652AEE937F6DC79B4D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56F8F62036D051146800B06C /* Pods_fiveseconds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B16D4E2B1C827D9200C6C472 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +140,8 @@
 				B16D4E361C827D9200C6C472 /* fiveseconds */,
 				477B703F1C83050D007D0945 /* fivesecondsTests */,
 				B16D4E351C827D9200C6C472 /* Products */,
+				E85923229E73935CB4886A50 /* Pods */,
+				ADD5D652AEE937F6DC79B4D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +162,8 @@
 				B16D4E371C827D9200C6C472 /* AppDelegate.swift */,
 				B16D4E391C827D9200C6C472 /* ViewController.swift */,
 				B16D4E3B1C827D9200C6C472 /* Main.storyboard */,
+				B16EEBF91C8370F0004454B6 /* CustomChoiceView.swift */,
+				B16EEBFB1C837107004454B6 /* CustomChoiceView.xib */,
 				B1AA0BBC1C835A8A000F0DA9 /* ContactTableViewController.swift */,
 				B1DF30171C8332F600311C86 /* HeaderCollectionReusableView.swift */,
 				B15B79271C82CE50006C5ED0 /* RequestCollectionViewCell.swift */,
@@ -156,6 +177,15 @@
 				477B70351C82EB70007D0945 /* Network.swift */,
 			);
 			path = fiveseconds;
+			sourceTree = "<group>";
+		};
+		E85923229E73935CB4886A50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC90932CB41F57A80ADD39D1 /* Pods-fiveseconds.debug.xcconfig */,
+				970A4A38E7EB33EF606A9F6D /* Pods-fiveseconds.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,10 +213,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B16D4E461C827D9200C6C472 /* Build configuration list for PBXNativeTarget "fiveseconds" */;
 			buildPhases = (
+				5FAB5DF4D984C70B6EB365C7 /* Check Pods Manifest.lock */,
 				B16D4E301C827D9200C6C472 /* Sources */,
 				B16D4E311C827D9200C6C472 /* Frameworks */,
 				B16D4E321C827D9200C6C472 /* Resources */,
 				477B70301C82C75A007D0945 /* Embed Frameworks */,
+				1AF97EB09C2B457D23B4EAEA /* Embed Pods Frameworks */,
+				D3947454CB18A39A4E00AE48 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,10 +294,59 @@
 				B16D4E3F1C827D9200C6C472 /* Assets.xcassets in Resources */,
 				47521AE91C83501100A49E07 /* testpic.png in Resources */,
 				B16D4E3D1C827D9200C6C472 /* Main.storyboard in Resources */,
+				B16EEBFC1C837107004454B6 /* CustomChoiceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AF97EB09C2B457D23B4EAEA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fiveseconds/Pods-fiveseconds-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FAB5DF4D984C70B6EB365C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3947454CB18A39A4E00AE48 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fiveseconds/Pods-fiveseconds-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		477B703A1C83050D007D0945 /* Sources */ = {
@@ -283,6 +365,7 @@
 				470BA59A1C8291610081F3A1 /* DataModels.swift in Sources */,
 				B16D4E3A1C827D9200C6C472 /* ViewController.swift in Sources */,
 				477B70361C82EB70007D0945 /* Network.swift in Sources */,
+				B16EEBFA1C8370F0004454B6 /* CustomChoiceView.swift in Sources */,
 				B15B79281C82CE50006C5ED0 /* RequestCollectionViewCell.swift in Sources */,
 				B1AA0BBB1C8357A6000F0DA9 /* PathDynamicModal.swift in Sources */,
 				B16D4E381C827D9200C6C472 /* AppDelegate.swift in Sources */,
@@ -437,6 +520,7 @@
 		};
 		B16D4E471C827D9200C6C472 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC90932CB41F57A80ADD39D1 /* Pods-fiveseconds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -451,11 +535,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.BJHV.fiveseconds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5a8a19e5-96ed-435a-9323-97c76c2090a4";
+				SWIFT_OBJC_BRIDGING_HEADER = "fiveseconds-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		B16D4E481C827D9200C6C472 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 970A4A38E7EB33EF606A9F6D /* Pods-fiveseconds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -470,6 +556,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.BJHV.fiveseconds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5a8a19e5-96ed-435a-9323-97c76c2090a4";
+				SWIFT_OBJC_BRIDGING_HEADER = "fiveseconds-Bridging-Header.h";
 			};
 			name = Release;
 		};
