@@ -18,9 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        uploadImage(UIImage(named: "testpic.png")!, success: { success in
-//            assert(success == true)
-//        })
+        let oneSignal = OneSignal(launchOptions: launchOptions, appId: "f3afdc44-708c-480d-916a-be561ef7871b", handleNotification: nil)
+        
+        OneSignal.defaultClient().enableInAppAlertNotification(true)
+        
         uploadFile(NSBundle.mainBundle().URLForResource("testpic", withExtension: "png")!)
         return true
     }
