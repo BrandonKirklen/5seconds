@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
-        OneSignal.defaultClient().enableInAppAlertNotification(true)
+//        OneSignal.defaultClient().enableInAppAlertNotification(true)
         
         // uploadFile(NSBundle.mainBundle().URLForResource("testpic", withExtension: "png")!)
         return true
