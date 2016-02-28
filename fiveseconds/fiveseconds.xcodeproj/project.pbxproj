@@ -10,6 +10,7 @@
 		470BA59A1C8291610081F3A1 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470BA5991C8291610081F3A1 /* DataModels.swift */; };
 		47521AE61C833EE400A49E07 /* OneSignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47521AE51C833EE400A49E07 /* OneSignalKit.framework */; };
 		47521AE71C833EE400A49E07 /* OneSignalKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47521AE51C833EE400A49E07 /* OneSignalKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		47521AE91C83501100A49E07 /* testpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 47521AE81C83501100A49E07 /* testpic.png */; };
 		477B702E1C82C75A007D0945 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B702D1C82C75A007D0945 /* SwiftyJSON.framework */; };
 		477B702F1C82C75A007D0945 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 477B702D1C82C75A007D0945 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477B70321C82C844007D0945 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477B70311C82C844007D0945 /* JSONSerializable.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		470BA5991C8291610081F3A1 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		47521AE51C833EE400A49E07 /* OneSignalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignalKit.framework; path = Carthage/Build/iOS/OneSignalKit.framework; sourceTree = "<group>"; };
+		47521AE81C83501100A49E07 /* testpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testpic.png; sourceTree = "<group>"; };
 		477B702D1C82C75A007D0945 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		477B70311C82C844007D0945 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
 		477B70331C82CDD1007D0945 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		B16D4E361C827D9200C6C472 /* fiveseconds */ = {
 			isa = PBXGroup;
 			children = (
+				47521AE81C83501100A49E07 /* testpic.png */,
 				844FAB0C1C834065004B7C28 /* fiveseconds-Bridging-Header.h */,
 				B16D4E371C827D9200C6C472 /* AppDelegate.swift */,
 				B16D4E391C827D9200C6C472 /* ViewController.swift */,
@@ -250,6 +253,7 @@
 			files = (
 				B16D4E421C827D9200C6C472 /* LaunchScreen.storyboard in Resources */,
 				B16D4E3F1C827D9200C6C472 /* Assets.xcassets in Resources */,
+				47521AE91C83501100A49E07 /* testpic.png in Resources */,
 				B16D4E3D1C827D9200C6C472 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
