@@ -47,9 +47,7 @@ func UINotificationActionInit() {
     counterCategory.setActions([incrementAction, decrementAction],
         forContext: UIUserNotificationActionContext.Minimal)
     
-    
-    let types = UIUserNotificationType.Alert | UIUserNotificationType.Sound
-    let settings = UIUserNotificationSettings(forTypes: types, categories: NSSet(object: counterCategory))
+    let settings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: NSSet(object: counterCategory) as? Set<UIUserNotificationCategory>)
     UIApplication.sharedApplication().registerUserNotificationSettings(settings)
 
 }
