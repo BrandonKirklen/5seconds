@@ -16,26 +16,27 @@ protocol JSONDeserializable {
 extension Response: JSONDeserializable {
     func deserialize() -> JSON {
         var result: JSON = [:]
+        result["contents"] = [:]
         switch self {
         case .Location:
-            result["type"].string = "Location"
+            result["tag"].string = "Location"
         case let .Choice(choiceSide):
-            result["type"].string = "Choice"
+            result["tag"].string = "Choice"
             switch choiceSide {
             case .Left:
-                result["ChoiceSide"].string = "left"
+                result["contents"]["Choice"].string = "Left"
             case .Right:
-                result["ChoiceSide"].string = "right"
+                result["contents"]["Choice"].string = "Right"
             }
         case let .Arrival(timeOfArrival):
-            result["type"].string = "Arrival"
-            result["arrival"].double = timeOfArrival.timeIntervalSince1970
+            result["tag"].string = "Arrival"
+            result["contents"]["arrival"].double = timeOfArrival.timeIntervalSince1970
         case let .Status(status):
-            result["type"].string = "Status"
-            result["status"].bool = status
+            result["tag"].string = "Status"
+            result["contents"]["status"].bool = status
         case let .Visual(awsURL):
-            result["type"].string = "Visual"
-            result["AWS URL"].string = awsURL
+            result["tag"].string = "Visual"
+            result["contents"]["AWS URL"].string = awsURL
         }
         return result
     }

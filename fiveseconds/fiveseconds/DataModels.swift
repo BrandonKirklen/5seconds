@@ -31,7 +31,7 @@ enum ChoiceSide {
     case Right
 }
 
-struct Interactions {
+struct Interaction {
     var personID: Int
     var request: Request
     var response: Response

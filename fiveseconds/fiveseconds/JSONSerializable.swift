@@ -16,22 +16,23 @@ protocol JSONSerializable {
 extension Request: JSONSerializable {
     func serialize() -> JSON {
         var result: JSON = [:]
+        result["contents"] = [:]
         switch self {
         case .Location:
-            result["type"].string = "Location"
+            result["tag"].string = "LocationRequest"
         case let .Choice(left, right):
-            result["type"].string = "Choice"
-            result["left"].string = left
-            result["right"].string = right
+            result["tag"].string = "ChoiceRequest"
+            result["contents"]["left"].string = left
+            result["contents"]["right"].string = right
         case let .Arrival(location):
-            result["type"].string = "Arrival"
-            result["latitude"].double = location.coordinate.latitude
-            result["longitude"].double = location.coordinate.longitude
+            result["tag"].string = "ArrivalRequest"
+            result["contents"]["latitude"].double = location.coordinate.latitude
+            result["contents"]["longitude"].double = location.coordinate.longitude
         case let .Status(status):
-            result["type"].string = "Status"
-            result["status"].string = status
+            result["tag"].string = "StatusRequest"
+            result["contents"]["status"].string = status
         case .Visual:
-            result["type"].string = "Visual"
+            result["tag"].string = "VisualRequest"
         }
         return result
     }

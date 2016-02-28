@@ -15,12 +15,24 @@
 		477B70361C82EB70007D0945 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477B70351C82EB70007D0945 /* Network.swift */; };
 		477B70381C82EC8B007D0945 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B70371C82EC8B007D0945 /* Alamofire.framework */; };
 		477B70391C82EC8B007D0945 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 477B70371C82EC8B007D0945 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		477B70411C83050D007D0945 /* fivesecondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477B70401C83050D007D0945 /* fivesecondsTests.swift */; };
+		477B70481C830672007D0945 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B702D1C82C75A007D0945 /* SwiftyJSON.framework */; };
 		B16D4E381C827D9200C6C472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4E371C827D9200C6C472 /* AppDelegate.swift */; };
 		B16D4E3A1C827D9200C6C472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4E391C827D9200C6C472 /* ViewController.swift */; };
 		B16D4E3D1C827D9200C6C472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E3B1C827D9200C6C472 /* Main.storyboard */; };
 		B16D4E3F1C827D9200C6C472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E3E1C827D9200C6C472 /* Assets.xcassets */; };
 		B16D4E421C827D9200C6C472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E401C827D9200C6C472 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		477B70431C83050D007D0945 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B16D4E2C1C827D9200C6C472 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B16D4E331C827D9200C6C472;
+			remoteInfo = fiveseconds;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		477B70301C82C75A007D0945 /* Embed Frameworks */ = {
@@ -44,6 +56,9 @@
 		477B70331C82CDD1007D0945 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		477B70351C82EB70007D0945 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		477B70371C82EC8B007D0945 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		477B703E1C83050D007D0945 /* fivesecondsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fivesecondsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		477B70401C83050D007D0945 /* fivesecondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fivesecondsTests.swift; sourceTree = "<group>"; };
+		477B70421C83050D007D0945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B16D4E341C827D9200C6C472 /* fiveseconds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fiveseconds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16D4E371C827D9200C6C472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B16D4E391C827D9200C6C472 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +69,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		477B703B1C83050D007D0945 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477B70481C830672007D0945 /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B16D4E311C827D9200C6C472 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,12 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		477B703F1C83050D007D0945 /* fivesecondsTests */ = {
+			isa = PBXGroup;
+			children = (
+				477B70401C83050D007D0945 /* fivesecondsTests.swift */,
+				477B70421C83050D007D0945 /* Info.plist */,
+			);
+			path = fivesecondsTests;
+			sourceTree = "<group>";
+		};
 		B16D4E2B1C827D9200C6C472 = {
 			isa = PBXGroup;
 			children = (
 				477B70371C82EC8B007D0945 /* Alamofire.framework */,
 				477B702D1C82C75A007D0945 /* SwiftyJSON.framework */,
 				B16D4E361C827D9200C6C472 /* fiveseconds */,
+				477B703F1C83050D007D0945 /* fivesecondsTests */,
 				B16D4E351C827D9200C6C472 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				B16D4E341C827D9200C6C472 /* fiveseconds.app */,
+				477B703E1C83050D007D0945 /* fivesecondsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +138,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		477B703D1C83050D007D0945 /* fivesecondsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477B70451C83050D007D0945 /* Build configuration list for PBXNativeTarget "fivesecondsTests" */;
+			buildPhases = (
+				477B703A1C83050D007D0945 /* Sources */,
+				477B703B1C83050D007D0945 /* Frameworks */,
+				477B703C1C83050D007D0945 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				477B70441C83050D007D0945 /* PBXTargetDependency */,
+			);
+			name = fivesecondsTests;
+			productName = fivesecondsTests;
+			productReference = 477B703E1C83050D007D0945 /* fivesecondsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B16D4E331C827D9200C6C472 /* fiveseconds */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B16D4E461C827D9200C6C472 /* Build configuration list for PBXNativeTarget "fiveseconds" */;
@@ -132,6 +184,11 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = behv;
 				TargetAttributes = {
+					477B703D1C83050D007D0945 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = EU22L2KPSV;
+						TestTargetID = B16D4E331C827D9200C6C472;
+					};
 					B16D4E331C827D9200C6C472 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -151,11 +208,19 @@
 			projectRoot = "";
 			targets = (
 				B16D4E331C827D9200C6C472 /* fiveseconds */,
+				477B703D1C83050D007D0945 /* fivesecondsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		477B703C1C83050D007D0945 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B16D4E321C827D9200C6C472 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +234,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		477B703A1C83050D007D0945 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477B70411C83050D007D0945 /* fivesecondsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B16D4E301C827D9200C6C472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +256,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		477B70441C83050D007D0945 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B16D4E331C827D9200C6C472 /* fiveseconds */;
+			targetProxy = 477B70431C83050D007D0945 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B16D4E3B1C827D9200C6C472 /* Main.storyboard */ = {
@@ -204,6 +285,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		477B70461C83050D007D0945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = fivesecondsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = brandonkirklen.fivesecondsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fiveseconds.app/fiveseconds";
+			};
+			name = Debug;
+		};
+		477B70471C83050D007D0945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = fivesecondsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = brandonkirklen.fivesecondsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fiveseconds.app/fiveseconds";
+			};
+			name = Release;
+		};
 		B16D4E441C827D9200C6C472 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +431,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		477B70451C83050D007D0945 /* Build configuration list for PBXNativeTarget "fivesecondsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477B70461C83050D007D0945 /* Debug */,
+				477B70471C83050D007D0945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B16D4E2F1C827D9200C6C472 /* Build configuration list for PBXProject "fiveseconds" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
