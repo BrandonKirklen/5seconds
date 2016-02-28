@@ -17,6 +17,7 @@
 		477B70391C82EC8B007D0945 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 477B70371C82EC8B007D0945 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477B70411C83050D007D0945 /* fivesecondsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477B70401C83050D007D0945 /* fivesecondsTests.swift */; };
 		477B70481C830672007D0945 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B702D1C82C75A007D0945 /* SwiftyJSON.framework */; };
+		B15B79281C82CE50006C5ED0 /* RequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B79271C82CE50006C5ED0 /* RequestCollectionViewCell.swift */; };
 		B16D4E381C827D9200C6C472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4E371C827D9200C6C472 /* AppDelegate.swift */; };
 		B16D4E3A1C827D9200C6C472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4E391C827D9200C6C472 /* ViewController.swift */; };
 		B16D4E3D1C827D9200C6C472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16D4E3B1C827D9200C6C472 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		477B703E1C83050D007D0945 /* fivesecondsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fivesecondsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		477B70401C83050D007D0945 /* fivesecondsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fivesecondsTests.swift; sourceTree = "<group>"; };
 		477B70421C83050D007D0945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B15B79271C82CE50006C5ED0 /* RequestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCollectionViewCell.swift; sourceTree = "<group>"; };
 		B16D4E341C827D9200C6C472 /* fiveseconds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fiveseconds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16D4E371C827D9200C6C472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B16D4E391C827D9200C6C472 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				B16D4E371C827D9200C6C472 /* AppDelegate.swift */,
 				B16D4E391C827D9200C6C472 /* ViewController.swift */,
 				B16D4E3B1C827D9200C6C472 /* Main.storyboard */,
+				B15B79271C82CE50006C5ED0 /* RequestCollectionViewCell.swift */,
 				B16D4E3E1C827D9200C6C472 /* Assets.xcassets */,
 				B16D4E401C827D9200C6C472 /* LaunchScreen.storyboard */,
 				B16D4E431C827D9200C6C472 /* Info.plist */,
@@ -249,6 +252,7 @@
 				470BA59A1C8291610081F3A1 /* DataModels.swift in Sources */,
 				B16D4E3A1C827D9200C6C472 /* ViewController.swift in Sources */,
 				477B70361C82EB70007D0945 /* Network.swift in Sources */,
+				B15B79281C82CE50006C5ED0 /* RequestCollectionViewCell.swift in Sources */,
 				B16D4E381C827D9200C6C472 /* AppDelegate.swift in Sources */,
 				477B70341C82CDD1007D0945 /* JSONDeserializable.swift in Sources */,
 				477B70321C82C844007D0945 /* JSONSerializable.swift in Sources */,
@@ -407,6 +411,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fiveseconds/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.behv.fiveseconds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,6 +427,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fiveseconds/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.behv.fiveseconds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,6 +444,7 @@
 				477B70471C83050D007D0945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B16D4E2F1C827D9200C6C472 /* Build configuration list for PBXProject "fiveseconds" */ = {
 			isa = XCConfigurationList;
