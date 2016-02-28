@@ -11,6 +11,7 @@
 		47521AE61C833EE400A49E07 /* OneSignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47521AE51C833EE400A49E07 /* OneSignalKit.framework */; };
 		47521AE71C833EE400A49E07 /* OneSignalKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47521AE51C833EE400A49E07 /* OneSignalKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		47521AE91C83501100A49E07 /* testpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 47521AE81C83501100A49E07 /* testpic.png */; };
+		47521AEB1C8354C800A49E07 /* UINotificationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47521AEA1C8354C800A49E07 /* UINotificationActions.swift */; };
 		477B702E1C82C75A007D0945 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B702D1C82C75A007D0945 /* SwiftyJSON.framework */; };
 		477B702F1C82C75A007D0945 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 477B702D1C82C75A007D0945 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477B70321C82C844007D0945 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477B70311C82C844007D0945 /* JSONSerializable.swift */; };
@@ -59,6 +60,7 @@
 		470BA5991C8291610081F3A1 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		47521AE51C833EE400A49E07 /* OneSignalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignalKit.framework; path = Carthage/Build/iOS/OneSignalKit.framework; sourceTree = "<group>"; };
 		47521AE81C83501100A49E07 /* testpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testpic.png; sourceTree = "<group>"; };
+		47521AEA1C8354C800A49E07 /* UINotificationActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINotificationActions.swift; sourceTree = "<group>"; };
 		477B702D1C82C75A007D0945 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		477B70311C82C844007D0945 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
 		477B70331C82CDD1007D0945 /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				477B70311C82C844007D0945 /* JSONSerializable.swift */,
 				477B70331C82CDD1007D0945 /* JSONDeserializable.swift */,
 				477B70351C82EB70007D0945 /* Network.swift */,
+				47521AEA1C8354C800A49E07 /* UINotificationActions.swift */,
 			);
 			path = fiveseconds;
 			sourceTree = "<group>";
@@ -208,7 +211,7 @@
 					};
 					B16D4E331C827D9200C6C472 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 899JT6PKT3;
+						DevelopmentTeam = EU22L2KPSV;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -278,6 +281,7 @@
 				B16D4E3A1C827D9200C6C472 /* ViewController.swift in Sources */,
 				477B70361C82EB70007D0945 /* Network.swift in Sources */,
 				B15B79281C82CE50006C5ED0 /* RequestCollectionViewCell.swift in Sources */,
+				47521AEB1C8354C800A49E07 /* UINotificationActions.swift in Sources */,
 				B16D4E381C827D9200C6C472 /* AppDelegate.swift in Sources */,
 				477B70341C82CDD1007D0945 /* JSONDeserializable.swift in Sources */,
 				477B70321C82C844007D0945 /* JSONSerializable.swift in Sources */,
@@ -432,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
