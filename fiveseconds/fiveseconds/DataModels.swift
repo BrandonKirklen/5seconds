@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import UIKit
+import SwiftyJSON
 
 enum Request {
     case Location
